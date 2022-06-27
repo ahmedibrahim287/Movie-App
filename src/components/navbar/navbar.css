@@ -1,0 +1,10 @@
+.search:hover {
+  background-color: transparent !important;
+  border: solid 1px white;
+}
+.search:active {
+  background-color: transparent !important;
+}
+.search:focus {
+  background-color: transparent !important;
+}

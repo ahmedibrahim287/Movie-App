@@ -1,0 +1,9 @@
+.active > .page-link,
+.page-link.active {
+  color: white !important;
+  background-color: #212529 !important;
+  border-color: #fff !important;
+}
+.page-link {
+  color: #212529;
+}
