@@ -3,10 +3,11 @@ import { Fragment } from "react";
 import { Link } from "react-router-dom";
 import LocationSwitcher from "../locationSwitcher/locationSwitcher";
 import "./navbar.css";
+import { useSelector } from "react-redux";
 
 const Navbar = () => {
   const [title, setTitle] = useState();
-
+  const favouritesCounter = useSelector((state) => state.favouriteList.counter);
   return (
     <Fragment>
       <nav className="navbar navbar-expand-lg  navbar-dark bg-dark  border-bottom py-3 ">
@@ -37,7 +38,12 @@ const Navbar = () => {
               </li>
               <li className="nav-item">
                 <Link className="nav-link text-capitalize" to="/movies">
-                  movies
+                  Movies
+                </Link>
+              </li>
+              <li className="nav-item">
+                <Link className="nav-link text-capitalize" to="/favourites">
+                  Favourites {favouritesCounter}
                 </Link>
               </li>
             </ul>

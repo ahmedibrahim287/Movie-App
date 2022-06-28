@@ -9,6 +9,8 @@ import NotFound from "./components/NotFound";
 import MovieDetails from "./components/pages/MovieDetails";
 import SearchResults from "./components/pages/SearchResults";
 import LanguageContext from "./context/language";
+import Favourites from "./components/pages/favourite";
+
 import { useState } from "react";
 function App() {
   const [contextLang, setContextLang] = useState("en");
@@ -28,6 +30,8 @@ function App() {
               path={"/search-results/:search"}
               element={<SearchResults />}
             ></Route>
+            <Route path="/favourites" element={<Favourites />} />
+
             <Route path={"*"} element={<NotFound />}></Route>
           </Routes>
         </LanguageContext.Provider>

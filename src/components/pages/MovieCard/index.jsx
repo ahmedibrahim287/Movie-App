@@ -1,8 +1,30 @@
-import React, { Fragment } from "react";
+import React, { Fragment, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import styles from "./MoiveCard.module.css";
+import { useDispatch, useSelector } from "react-redux";
+import {
+  addToFavourites,
+  removeFromFavourites,
+} from "../../../store/slices/FavouritesSlice";
 
 const MovieCard = ({ item }) => {
+  const [isFavourite, setIsFavourite] = useState(false);
+  const dispatch = useDispatch();
+  const favouriteList = useSelector(
+    (state) => state.favouriteList.favouriteList,
+  );
+
+  useEffect(() => {
+    let isMovieInFavourite = favouriteList.findIndex(
+      (movie) => movie.id === item.id,
+    );
+    if (isMovieInFavourite === -1) {
+      setIsFavourite(false);
+    } else {
+      setIsFavourite(true);
+    }
+  }, [favouriteList]);
+
   return (
     <Fragment>
       <div className="d-flex flex-column ">
@@ -17,9 +39,24 @@ const MovieCard = ({ item }) => {
           )}...`}</h3>
           <ul className={styles.icon}>
             <li>
-              <Link to="#">
-                <i className="fa-duotone fa-circle-heart"></i>{" "}
-              </Link>
+              {isFavourite ? (
+                <Link
+                  to="#"
+                  onClick={() => dispatch(removeFromFavourites(item.id))}
+                >
+                  <i
+                    className="fa-solid fa-heart"
+                    style={{ color: "#eb8a73" }}
+                  ></i>
+                </Link>
+              ) : (
+                <Link to="#" onClick={() => dispatch(addToFavourites(item))}>
+                  <i
+                    className="fa-thin fa-heart"
+                    style={{ color: "#eb8a73" }}
+                  ></i>
+                </Link>
+              )}
             </li>
           </ul>
         </div>
