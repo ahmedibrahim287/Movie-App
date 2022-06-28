@@ -132,6 +132,10 @@
   right: 0;
   z-index: 2;
   transition: all 0.3s ease 0.2s;
+  -webkit-border-radius: 0 0 0 10px;
+  -moz-border-radius: 0 0 0 10px;
+  -ms-border-radius: 0 0 0 10px;
+  -o-border-radius: 0 0 0 10px;
 }
 .box1:hover .icon {
   top: 0;
@@ -157,9 +161,10 @@
 .box6 .icon li a {
   border-radius: 50%;
 }
-.box1 .icon li a:hover {
+/* .box1 .icon li a:hover {
   color: #eb8a73;
-}
+  font-size: 40px;
+} */
 @media only screen and (max-width: 990px) {
   .box1 {
     margin-bottom: 30px;

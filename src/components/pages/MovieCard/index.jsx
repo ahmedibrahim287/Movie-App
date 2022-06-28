@@ -41,18 +41,23 @@ const MovieCard = ({ item }) => {
             <li>
               {isFavourite ? (
                 <Link
+                  className="Push"
                   to="#"
                   onClick={() => dispatch(removeFromFavourites(item.id))}
                 >
                   <i
-                    className="fa-solid fa-heart"
+                    className="fa-solid fa-heart  hvr-pulse "
                     style={{ color: "#eb8a73" }}
                   ></i>
                 </Link>
               ) : (
-                <Link to="#" onClick={() => dispatch(addToFavourites(item))}>
+                <Link
+                  className="Push"
+                  to="#"
+                  onClick={() => dispatch(addToFavourites(item))}
+                >
                   <i
-                    className="fa-thin fa-heart"
+                    className="fa-thin fa-heart  hvr-pulse  "
                     style={{ color: "#eb8a73" }}
                   ></i>
                 </Link>
@@ -71,7 +76,7 @@ const MovieCard = ({ item }) => {
           </p>
           <Link
             to={`/movie-details/${item.id}`}
-            className="btn btn-outline-secondary "
+            className="btn btn-outline-secondary hvr-grow"
           >
             More Details{" "}
           </Link>
