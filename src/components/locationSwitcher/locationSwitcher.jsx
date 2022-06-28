@@ -21,6 +21,7 @@ const LocationSwitcher = () => {
         </p>
         <div
           className="btn  btn-outline-secondary"
+          style={{ lineHeight: "32px" }}
           onClick={() => setContextLang(contextLang === "ar" ? "en" : "ar")}
         >
           toogle lang{" "}
