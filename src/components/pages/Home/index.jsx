@@ -9,7 +9,7 @@ const Home = () => {
         className="d-flex flex-column w-100 ms-auto "
         style={{ marginTop: "200px" }}
       >
-        <h1 className="heading ">welcome to movie aparafasdfp</h1>
+        <h1 className="heading ">welcome to movie app</h1>
         <Link
           to="/movies"
           className="btn btn-outline-secondary w-25 m-auto text-capitalize"
