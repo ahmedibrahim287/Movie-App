@@ -1,4 +1,8 @@
 {
+  "engines": {
+    "node": "10.17.0",
+    "npm": "6.11.3"
+  },
   "name": "movie-app",
   "version": "0.1.0",
   "private": true,
